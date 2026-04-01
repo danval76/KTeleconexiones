@@ -1,3 +1,4 @@
+/* --- Variables de Marca KTELECONEXIONES --- */
 :root {
     --primary-azul: #333a66;
     --primary-morado: #7b3086;
@@ -6,15 +7,22 @@
     --white: #ffffff;
     --text-dark: #1e2132;
     --text-light: #5e6278;
-    --accent: #00d4ff; /* Un cian sutil para detalles de contraste */
+    --accent-glow: rgba(123, 48, 134, 0.15);
+}
+
+/* --- Configuración Base --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-    margin: 0;
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     color: var(--text-dark);
-    scroll-behavior: smooth;
+    line-height: 1.6;
     background-color: var(--white);
+    scroll-behavior: smooth;
 }
 
 .container {
@@ -23,122 +31,279 @@ body {
     padding: 0 20px;
 }
 
-/* Navbar Elegante */
+/* --- Navbar Profesional --- */
 .navbar {
-    background: rgba(255, 255, 255, 0.95);
-    padding: 1.2rem 0;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    background: rgba(255, 255, 255, 0.98);
+    padding: 0.8rem 0; /* Ajustado para el logo */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.06);
     position: sticky;
     top: 0;
     z-index: 1000;
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(8px);
 }
 
-.logo {
-    font-weight: 800;
-    font-size: 1.4rem;
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.logo-img {
+    height: 65px; /* Altura optimizada para tu logo 133x180 */
+    width: auto;
+    transition: transform 0.3s ease;
+}
+
+.logo-img:hover {
+    transform: scale(1.05);
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+.nav-links a {
+    text-decoration: none;
     color: var(--primary-azul);
-    letter-spacing: -0.5px;
-}
-
-.logo span { color: var(--primary-morado); }
-
-.nav-links { list-style: none; display: flex; gap: 30px; margin: 0; }
-.nav-links a { 
-    text-decoration: none; 
-    color: var(--text-dark); 
-    font-weight: 600; 
+    font-weight: 600;
     font-size: 0.95rem;
     transition: 0.3s;
 }
-.nav-links a:hover { color: var(--primary-morado); }
 
-/* Hero Section con Gradiente de Marca */
+.nav-links a:hover {
+    color: var(--primary-morado);
+}
+
+.btn-nav {
+    background: var(--primary-azul);
+    color: white !important;
+    padding: 10px 22px;
+    border-radius: 50px;
+    font-size: 0.9rem;
+}
+
+.btn-nav:hover {
+    background: var(--primary-morado) !important;
+}
+
+/* --- Hero Section (Impacto Visual) --- */
 .hero {
     background: linear-gradient(135deg, var(--primary-azul) 0%, var(--primary-morado) 100%);
     color: white;
     padding: 120px 0;
     text-align: center;
     position: relative;
-    overflow: hidden;
 }
 
-.hero h1 { font-size: 3.5rem; margin-bottom: 20px; line-height: 1.1; font-weight: 800; }
-.hero p { font-size: 1.25rem; opacity: 0.9; max-width: 700px; margin: 0 auto 30px; }
+.hero h1 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+    letter-spacing: -1px;
+}
+
+.highlight {
+    color: #fff;
+    text-decoration: underline rgba(255,255,255,0.3);
+}
+
+.hero p {
+    font-size: 1.3rem;
+    max-width: 750px;
+    margin: 0 auto 35px;
+    opacity: 0.95;
+}
 
 .btn-primary {
     display: inline-block;
     background: var(--white);
     color: var(--primary-azul);
-    padding: 16px 35px;
+    padding: 18px 40px;
     border-radius: 50px;
     text-decoration: none;
     font-weight: 700;
+    font-size: 1.1rem;
     transition: 0.3s;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
 }
 
-.btn-primary:hover { transform: translateY(-3px); box-shadow: 0 15px 30px rgba(0,0,0,0.2); }
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+}
 
-/* Sección de Planes */
-.planes { padding: 100px 0; background: var(--bg-suave-azul); }
-.section-title { text-align: center; margin-bottom: 50px; font-size: 2.2rem; color: var(--primary-azul); }
+/* --- Sección del Plan Único --- */
+.planes {
+    padding: 100px 0;
+    background-color: var(--bg-suave-azul);
+}
 
-.plan-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 30px;
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    color: var(--primary-azul);
+    margin-bottom: 50px;
+    font-weight: 800;
 }
 
 .plan-card {
     background: var(--white);
-    padding: 50px 40px;
-    border-radius: 24px;
+    padding: 60px 45px;
+    border-radius: 30px;
     text-align: center;
-    transition: 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-    border: 1px solid rgba(51, 58, 102, 0.1);
+    box-shadow: 0 20px 50px rgba(51, 58, 102, 0.08);
+    border: 1px solid rgba(51, 58, 102, 0.05);
+    position: relative;
+    transition: 0.4s;
 }
 
-.plan-card:hover { transform: translateY(-10px); box-shadow: 0 30px 60px rgba(51, 58, 102, 0.1); }
+.plan-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 30px 70px rgba(51, 58, 102, 0.12);
+}
 
-.plan-card h3 { color: var(--primary-morado); font-size: 1.8rem; margin-bottom: 15px; }
+.plan-card h3 {
+    color: var(--primary-morado);
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+}
 
-.price { font-size: 1.2rem; font-weight: 700; color: var(--text-light); margin-bottom: 30px; }
+.price {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--text-light);
+    margin-bottom: 35px;
+}
 
-.plan-card ul { list-style: none; padding: 0; margin-bottom: 40px; text-align: left; }
-.plan-card li { margin-bottom: 15px; display: flex; align-items: center; color: var(--text-light); }
-.plan-card i { color: #10b981; margin-right: 12px; font-size: 1.1rem; }
+.badge {
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--primary-morado);
+    color: white;
+    padding: 8px 25px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 0.85rem;
+    box-shadow: 0 5px 15px rgba(123, 48, 134, 0.3);
+}
+
+.plan-card ul {
+    list-style: none;
+    text-align: left;
+    margin-bottom: 45px;
+    max-width: 320px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.plan-card li {
+    padding: 12px 0;
+    display: flex;
+    align-items: center;
+    color: var(--text-light);
+    font-size: 1.05rem;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.plan-card li:last-child { border-bottom: none; }
+
+.plan-card i {
+    color: #10b981;
+    margin-right: 15px;
+    font-size: 1.2rem;
+}
 
 .btn-plan {
-    background: var(--primary-azul);
+    background: linear-gradient(to right, var(--primary-azul), var(--primary-morado));
     color: white;
     border: none;
-    padding: 14px;
-    border-radius: 12px;
-    font-weight: 600;
+    padding: 16px 40px;
+    border-radius: 15px;
+    font-weight: 700;
+    font-size: 1.1rem;
     width: 100%;
     cursor: pointer;
     transition: 0.3s;
 }
 
-.btn-plan:hover { background: var(--primary-morado); }
+.btn-plan:hover {
+    filter: brightness(1.1);
+    box-shadow: 0 10px 20px var(--accent-glow);
+}
 
-/* Footer Corporativo */
-.footer { background: var(--primary-azul); color: white; padding: 80px 0 40px; }
-.footer-content { display: grid; grid-template-columns: 1.5fr 1fr; gap: 60px; margin-bottom: 40px; }
-.footer h4 { font-size: 1.5rem; margin-bottom: 20px; color: var(--white); }
-.footer p { opacity: 0.8; line-height: 1.8; font-size: 0.95rem; }
+/* --- Footer (Blindaje Legal para Meta) --- */
+.footer {
+    background: var(--primary-azul);
+    color: white;
+    padding: 80px 0 40px;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: 1.6fr 1fr;
+    gap: 60px;
+    margin-bottom: 50px;
+}
+
+.footer h4 {
+    font-size: 1.4rem;
+    margin-bottom: 25px;
+    color: #fff;
+    font-weight: 700;
+}
 
 .legal-box {
     background: rgba(255,255,255,0.05);
-    padding: 25px;
-    border-radius: 15px;
-    border-left: 4px solid var(--primary-morado);
+    padding: 30px;
+    border-radius: 20px;
+    border-left: 5px solid var(--primary-morado);
 }
 
-.copyright { text-align: center; padding-top: 30px; border-top: 1px solid rgba(255,255,255,0.1); font-size: 0.85rem; opacity: 0.6; }
+.legal-box p {
+    margin-bottom: 15px;
+    font-size: 0.95rem;
+    opacity: 0.9;
+}
 
+.footer-links ul {
+    list-style: none;
+}
+
+.footer-links li { margin-bottom: 12px; }
+
+.footer-links a {
+    color: white;
+    text-decoration: none;
+    opacity: 0.7;
+    transition: 0.3s;
+}
+
+.footer-links a:hover { opacity: 1; color: var(--primary-morado); }
+
+.copyright {
+    text-align: center;
+    padding-top: 35px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    font-size: 0.85rem;
+    opacity: 0.6;
+}
+
+/* --- Adaptabilidad Móvil --- */
 @media (max-width: 768px) {
-    .hero h1 { font-size: 2.2rem; }
+    .hero h1 { font-size: 2.4rem; }
+    .hero p { font-size: 1.1rem; }
     .footer-content { grid-template-columns: 1fr; }
+    .nav-links { display: none; } /* En móvil sugerimos usar menú hamburguesa o simplificar */
+    .logo-img { height: 50px; }
 }
