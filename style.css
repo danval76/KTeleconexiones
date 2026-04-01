@@ -1,16 +1,17 @@
-/* --- Variables de Marca KTELECONEXIONES --- */
+/* =========================================
+   VARIABLES DE MARCA KTELECONEXIONES
+   ========================================= */
 :root {
-    --primary-azul: #333a66;
-    --primary-morado: #7b3086;
-    --bg-suave-azul: #f0f2f5;
-    --bg-suave-morado: #f9f4fa;
+    --primary-azul: #333a66;   /* Tu Azul Corporativo */
+    --primary-morado: #7b3086; /* Tu Morado Corporativo */
+    --bg-suave-azul: #f4f6f9;
     --white: #ffffff;
-    --text-dark: #1e2132;
+    --text-dark: #1a1c2d;
     --text-light: #5e6278;
-    --accent-glow: rgba(123, 48, 134, 0.15);
+    --accent-glow: rgba(123, 48, 134, 0.1);
 }
 
-/* --- Configuración Base --- */
+/* --- Reset General --- */
 * {
     margin: 0;
     padding: 0;
@@ -23,6 +24,8 @@ body {
     line-height: 1.6;
     background-color: var(--white);
     scroll-behavior: smooth;
+    /* Espacio superior para que el contenido no choque con la navbar fija */
+    padding-top: 160px; 
 }
 
 .container {
@@ -31,32 +34,40 @@ body {
     padding: 0 20px;
 }
 
-/* --- Navbar Profesional --- */
+/* =========================================
+   NAVBAR CENTRADA (LOGO ARRIBA + MENÚ ABAJO)
+   ========================================= */
 .navbar {
     background: rgba(255, 255, 255, 0.98);
-    padding: 0.8rem 0; /* Ajustado para el logo */
-    box-shadow: 0 4px 15px rgba(0,0,0,0.06);
-    position: sticky;
+    padding: 1.5rem 0 1rem 0;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    position: fixed;
     top: 0;
+    width: 100%;
     z-index: 1000;
-    backdrop-filter: blur(8px);
+    backdrop-filter: blur(10px);
 }
 
+/* Alineación vertical de los elementos dentro de la navbar */
 .navbar .container {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: column; 
+    align-items: center;    /* Centra Logo y Menú horizontalmente */
+    gap: 15px;             /* Espacio entre logo y menú */
 }
 
+/* Contenedor del Logo */
 .logo-container {
     display: flex;
+    justify-content: center;
     align-items: center;
     text-decoration: none;
 }
 
+/* Control de tamaño para tu logo 133x180 */
 .logo-img {
-    height: 65px; /* Altura optimizada para tu logo 133x180 */
-    width: auto;
+    height: 75px; /* Altura ideal para que no sature la pantalla */
+    width: auto;  /* Mantiene la proporción original */
     transition: transform 0.3s ease;
 }
 
@@ -64,18 +75,22 @@ body {
     transform: scale(1.05);
 }
 
+/* Menú de Navegación */
 .nav-links {
     list-style: none;
     display: flex;
     gap: 30px;
-    align-items: center;
+    margin: 0;
+    padding: 0;
 }
 
 .nav-links a {
     text-decoration: none;
     color: var(--primary-azul);
-    font-weight: 600;
-    font-size: 0.95rem;
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
     transition: 0.3s;
 }
 
@@ -83,105 +98,78 @@ body {
     color: var(--primary-morado);
 }
 
-.btn-nav {
-    background: var(--primary-azul);
-    color: white !important;
-    padding: 10px 22px;
-    border-radius: 50px;
-    font-size: 0.9rem;
-}
-
-.btn-nav:hover {
-    background: var(--primary-morado) !important;
-}
-
-/* --- Hero Section (Impacto Visual) --- */
+/* =========================================
+   HERO SECTION (BANNER PRINCIPAL)
+   ========================================= */
 .hero {
     background: linear-gradient(135deg, var(--primary-azul) 0%, var(--primary-morado) 100%);
     color: white;
-    padding: 120px 0;
+    padding: 100px 0;
     text-align: center;
-    position: relative;
 }
 
 .hero h1 {
-    font-size: 3.5rem;
+    font-size: 3.2rem;
     font-weight: 800;
     margin-bottom: 20px;
-    letter-spacing: -1px;
+    line-height: 1.2;
 }
 
 .highlight {
     color: #fff;
-    text-decoration: underline rgba(255,255,255,0.3);
+    text-shadow: 0 2px 10px rgba(0,0,0,0.2);
 }
 
 .hero p {
-    font-size: 1.3rem;
-    max-width: 750px;
-    margin: 0 auto 35px;
-    opacity: 0.95;
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 0 auto 30px;
+    opacity: 0.9;
 }
 
 .btn-primary {
     display: inline-block;
     background: var(--white);
     color: var(--primary-azul);
-    padding: 18px 40px;
+    padding: 16px 40px;
     border-radius: 50px;
     text-decoration: none;
-    font-weight: 700;
-    font-size: 1.1rem;
+    font-weight: 800;
     transition: 0.3s;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
 }
 
 .btn-primary:hover {
     transform: translateY(-3px);
-    box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.25);
 }
 
-/* --- Sección del Plan Único --- */
+/* =========================================
+   SECCIÓN PLAN ÚNICO
+   ========================================= */
 .planes {
-    padding: 100px 0;
+    padding: 80px 0;
     background-color: var(--bg-suave-azul);
 }
 
 .section-title {
     text-align: center;
-    font-size: 2.5rem;
+    font-size: 2.2rem;
     color: var(--primary-azul);
-    margin-bottom: 50px;
+    margin-bottom: 40px;
     font-weight: 800;
 }
 
 .plan-card {
     background: var(--white);
-    padding: 60px 45px;
-    border-radius: 30px;
+    max-width: 450px;
+    margin: 0 auto;
+    padding: 50px 40px;
+    border-radius: 25px;
     text-align: center;
-    box-shadow: 0 20px 50px rgba(51, 58, 102, 0.08);
-    border: 1px solid rgba(51, 58, 102, 0.05);
+    box-shadow: 0 15px 40px rgba(51, 58, 102, 0.08);
     position: relative;
-    transition: 0.4s;
-}
-
-.plan-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 30px 70px rgba(51, 58, 102, 0.12);
-}
-
-.plan-card h3 {
-    color: var(--primary-morado);
-    font-size: 2.2rem;
-    margin-bottom: 10px;
-}
-
-.price {
-    font-size: 1.3rem;
-    font-weight: 600;
-    color: var(--text-light);
-    margin-bottom: 35px;
+    border: 1px solid rgba(51, 58, 102, 0.05);
 }
 
 .badge {
@@ -191,119 +179,112 @@ body {
     transform: translateX(-50%);
     background: var(--primary-morado);
     color: white;
-    padding: 8px 25px;
+    padding: 6px 20px;
     border-radius: 50px;
     font-weight: 700;
-    font-size: 0.85rem;
-    box-shadow: 0 5px 15px rgba(123, 48, 134, 0.3);
+    font-size: 0.8rem;
+}
+
+.plan-card h3 {
+    color: var(--primary-morado);
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.price {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--text-light);
+    margin-bottom: 30px;
 }
 
 .plan-card ul {
     list-style: none;
     text-align: left;
-    margin-bottom: 45px;
-    max-width: 320px;
-    margin-left: auto;
-    margin-right: auto;
+    margin-bottom: 40px;
 }
 
 .plan-card li {
-    padding: 12px 0;
+    padding: 10px 0;
+    color: var(--text-light);
+    border-bottom: 1px solid #f0f0f0;
     display: flex;
     align-items: center;
-    color: var(--text-light);
-    font-size: 1.05rem;
-    border-bottom: 1px solid #f0f0f0;
 }
-
-.plan-card li:last-child { border-bottom: none; }
 
 .plan-card i {
     color: #10b981;
-    margin-right: 15px;
-    font-size: 1.2rem;
+    margin-right: 12px;
 }
 
 .btn-plan {
-    background: linear-gradient(to right, var(--primary-azul), var(--primary-morado));
+    background: var(--primary-azul);
     color: white;
     border: none;
-    padding: 16px 40px;
-    border-radius: 15px;
+    padding: 15px;
+    border-radius: 12px;
     font-weight: 700;
-    font-size: 1.1rem;
     width: 100%;
     cursor: pointer;
     transition: 0.3s;
 }
 
 .btn-plan:hover {
-    filter: brightness(1.1);
-    box-shadow: 0 10px 20px var(--accent-glow);
+    background: var(--primary-morado);
 }
 
-/* --- Footer (Blindaje Legal para Meta) --- */
+/* =========================================
+   FOOTER (VALIDACIÓN LEGAL META)
+   ========================================= */
 .footer {
     background: var(--primary-azul);
     color: white;
-    padding: 80px 0 40px;
+    padding: 60px 0 30px;
 }
 
 .footer-content {
     display: grid;
-    grid-template-columns: 1.6fr 1fr;
-    gap: 60px;
-    margin-bottom: 50px;
-}
-
-.footer h4 {
-    font-size: 1.4rem;
-    margin-bottom: 25px;
-    color: #fff;
-    font-weight: 700;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 40px;
+    margin-bottom: 30px;
 }
 
 .legal-box {
     background: rgba(255,255,255,0.05);
-    padding: 30px;
-    border-radius: 20px;
-    border-left: 5px solid var(--primary-morado);
+    padding: 25px;
+    border-radius: 15px;
+    border-left: 4px solid var(--primary-morado);
 }
 
 .legal-box p {
-    margin-bottom: 15px;
-    font-size: 0.95rem;
-    opacity: 0.9;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+    opacity: 0.85;
 }
 
-.footer-links ul {
-    list-style: none;
+.footer-links h4 { margin-bottom: 20px; }
+.footer-links ul { list-style: none; }
+.footer-links a { 
+    color: white; 
+    text-decoration: none; 
+    opacity: 0.7; 
+    font-size: 0.9rem;
 }
-
-.footer-links li { margin-bottom: 12px; }
-
-.footer-links a {
-    color: white;
-    text-decoration: none;
-    opacity: 0.7;
-    transition: 0.3s;
-}
-
 .footer-links a:hover { opacity: 1; color: var(--primary-morado); }
 
 .copyright {
     text-align: center;
-    padding-top: 35px;
+    padding-top: 25px;
     border-top: 1px solid rgba(255,255,255,0.1);
-    font-size: 0.85rem;
-    opacity: 0.6;
+    font-size: 0.8rem;
+    opacity: 0.5;
 }
 
 /* --- Adaptabilidad Móvil --- */
 @media (max-width: 768px) {
-    .hero h1 { font-size: 2.4rem; }
-    .hero p { font-size: 1.1rem; }
+    body { padding-top: 140px; }
+    .hero h1 { font-size: 2.2rem; }
+    .logo-img { height: 55px; }
+    .nav-links { gap: 15px; flex-wrap: wrap; justify-content: center; }
     .footer-content { grid-template-columns: 1fr; }
-    .nav-links { display: none; } /* En móvil sugerimos usar menú hamburguesa o simplificar */
-    .logo-img { height: 50px; }
 }
