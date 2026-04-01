@@ -1,15 +1,20 @@
 :root {
-    --primary: #0056b3;
-    --secondary: #00d4ff;
-    --dark: #1a1a1a;
-    --light: #f8f9fa;
+    --primary-azul: #333a66;
+    --primary-morado: #7b3086;
+    --bg-suave-azul: #f0f2f5;
+    --bg-suave-morado: #f9f4fa;
+    --white: #ffffff;
+    --text-dark: #1e2132;
+    --text-light: #5e6278;
+    --accent: #00d4ff; /* Un cian sutil para detalles de contraste */
 }
 
 body {
     margin: 0;
-    font-family: 'Segoe UI', sans-serif;
-    color: #333;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    color: var(--text-dark);
     scroll-behavior: smooth;
+    background-color: var(--white);
 }
 
 .container {
@@ -18,120 +23,122 @@ body {
     padding: 0 20px;
 }
 
-/* Navbar */
+/* Navbar Elegante */
 .navbar {
-    background: white;
-    padding: 1rem 0;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    background: rgba(255, 255, 255, 0.95);
+    padding: 1.2rem 0;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
     position: sticky;
     top: 0;
     z-index: 1000;
-}
-
-.navbar .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    backdrop-filter: blur(10px);
 }
 
 .logo {
-    font-weight: bold;
-    font-size: 1.5rem;
-    color: var(--primary);
+    font-weight: 800;
+    font-size: 1.4rem;
+    color: var(--primary-azul);
+    letter-spacing: -0.5px;
 }
 
-.nav-links {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-}
+.logo span { color: var(--primary-morado); }
 
-.nav-links a {
-    text-decoration: none;
-    color: var(--dark);
-    font-weight: 500;
+.nav-links { list-style: none; display: flex; gap: 30px; margin: 0; }
+.nav-links a { 
+    text-decoration: none; 
+    color: var(--text-dark); 
+    font-weight: 600; 
+    font-size: 0.95rem;
+    transition: 0.3s;
 }
+.nav-links a:hover { color: var(--primary-morado); }
 
-/* Hero */
+/* Hero Section con Gradiente de Marca */
 .hero {
-    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    background: linear-gradient(135deg, var(--primary-azul) 0%, var(--primary-morado) 100%);
     color: white;
-    padding: 100px 0;
+    padding: 120px 0;
     text-align: center;
+    position: relative;
+    overflow: hidden;
 }
 
-.hero h1 { font-size: 3rem; margin-bottom: 20px; }
-.highlight { color: #fff; text-shadow: 2px 2px 4px rgba(0,0,0,0.3); }
+.hero h1 { font-size: 3.5rem; margin-bottom: 20px; line-height: 1.1; font-weight: 800; }
+.hero p { font-size: 1.25rem; opacity: 0.9; max-width: 700px; margin: 0 auto 30px; }
 
 .btn-primary {
     display: inline-block;
-    background: #ffcc00;
-    color: var(--dark);
-    padding: 15px 30px;
-    border-radius: 30px;
+    background: var(--white);
+    color: var(--primary-azul);
+    padding: 16px 35px;
+    border-radius: 50px;
     text-decoration: none;
-    font-weight: bold;
+    font-weight: 700;
     transition: 0.3s;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
 }
 
-.btn-primary:hover { transform: scale(1.05); }
+.btn-primary:hover { transform: translateY(-3px); box-shadow: 0 15px 30px rgba(0,0,0,0.2); }
 
-/* Planes */
-.planes { padding: 80px 0; background: var(--light); }
-.section-title { text-align: center; margin-bottom: 40px; font-size: 2.5rem; }
+/* Sección de Planes */
+.planes { padding: 100px 0; background: var(--bg-suave-azul); }
+.section-title { text-align: center; margin-bottom: 50px; font-size: 2.2rem; color: var(--primary-azul); }
 
 .plan-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 30px;
 }
 
 .plan-card {
-    background: white;
-    padding: 40px;
-    border-radius: 15px;
+    background: var(--white);
+    padding: 50px 40px;
+    border-radius: 24px;
     text-align: center;
-    border: 1px solid #ddd;
-    transition: 0.3s;
-    position: relative;
+    transition: 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    border: 1px solid rgba(51, 58, 102, 0.1);
 }
 
-.plan-card.featured {
-    border: 2px solid var(--primary);
-    transform: scale(1.05);
-}
+.plan-card:hover { transform: translateY(-10px); box-shadow: 0 30px 60px rgba(51, 58, 102, 0.1); }
 
-.badge {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background: var(--primary);
-    color: white;
-    padding: 5px 15px;
-    border-radius: 20px;
-    font-size: 0.8rem;
-}
+.plan-card h3 { color: var(--primary-morado); font-size: 1.8rem; margin-bottom: 15px; }
 
-.plan-card ul { list-style: none; padding: 0; margin: 20px 0; text-align: left; }
-.plan-card li { margin-bottom: 10px; }
-.plan-card i { color: #28a745; margin-right: 10px; }
+.price { font-size: 1.2rem; font-weight: 700; color: var(--text-light); margin-bottom: 30px; }
+
+.plan-card ul { list-style: none; padding: 0; margin-bottom: 40px; text-align: left; }
+.plan-card li { margin-bottom: 15px; display: flex; align-items: center; color: var(--text-light); }
+.plan-card i { color: #10b981; margin-right: 12px; font-size: 1.1rem; }
 
 .btn-plan {
-    background: var(--primary);
+    background: var(--primary-azul);
     color: white;
     border: none;
-    padding: 10px 25px;
-    border-radius: 5px;
-    cursor: pointer;
+    padding: 14px;
+    border-radius: 12px;
+    font-weight: 600;
     width: 100%;
+    cursor: pointer;
+    transition: 0.3s;
 }
 
-/* Footer */
-.footer { background: var(--dark); color: white; padding: 50px 0 20px; }
-.footer-content {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 40px;
-    margin-bottom: 30px;
+.btn-plan:hover { background: var(--primary-morado); }
+
+/* Footer Corporativo */
+.footer { background: var(--primary-azul); color: white; padding: 80px 0 40px; }
+.footer-content { display: grid; grid-template-columns: 1.5fr 1fr; gap: 60px; margin-bottom: 40px; }
+.footer h4 { font-size: 1.5rem; margin-bottom: 20px; color: var(--white); }
+.footer p { opacity: 0.8; line-height: 1.8; font-size: 0.95rem; }
+
+.legal-box {
+    background: rgba(255,255,255,0.05);
+    padding: 25px;
+    border-radius: 15px;
+    border-left: 4px solid var(--primary-morado);
 }
-.copyright { text-align: center; font-size: 0.8rem; border-top: 1px solid #444; padding-top: 20px; }
+
+.copyright { text-align: center; padding-top: 30px; border-top: 1px solid rgba(255,255,255,0.1); font-size: 0.85rem; opacity: 0.6; }
+
+@media (max-width: 768px) {
+    .hero h1 { font-size: 2.2rem; }
+    .footer-content { grid-template-columns: 1fr; }
+}
