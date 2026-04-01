@@ -3,62 +3,91 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <title>KTeleconexiones | Fibra Óptica de Alta Velocidad</title>
-    
+    <link rel="stylesheet" href="style.css?v=1.2">
+    <title>KTeleconexiones | Fibra Óptica en Guárico</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-    
-    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<nav class="navbar">
-    <div class="container">
-        <a href="#" class="logo-container">
-            <img src="logo.png" alt="Logo KTELECONEXIONES C.A" class="logo-img">
-        </a>
-        
-        <ul class="nav-links">
-            <li><a href="#inicio">Inicio</a></li>
-            <li><a href="#plan">Plan Base</a></li>
-            <li><a href="privacidad.html">Privacidad</a></li>
-            <li><a href="https://wa.me/584127912999">Contacto</a></li>
-        </ul>
-    </div>
-</nav>
+    <nav class="navbar">
+        <div class="container">
+            <a href="#" class="logo-container">
+                <img src="logo.png" alt="Logo KTELECONEXIONES C.A" class="logo-img">
+            </a>
+            <ul class="nav-links">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#beneficios">Beneficios</a></li>
+                <li><a href="#plan">Plan Base</a></li>
+                <li><a href="privacidad.html">Privacidad</a></li>
+                <li><a href="https://wa.me/584127912999">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+
     <header id="inicio" class="hero">
         <div class="container">
             <h1>Fibra Óptica Real en <span class="highlight">Guárico</span></h1>
-            <p>Conexión estable y de alta velocidad para Las Mercedes del Llano y Todo el Guárico. Navega, trabaja y estudia sin interrupciones.</p>
-            <div class="hero-btns">
-                <a href="#plan" class="btn-primary">Ver Plan Base</a>
-            </div>
+            <p>Conectividad estable y de alta velocidad para Las Mercedes del Llano. Navega, trabaja y estudia sin interrupciones.</p>
+            <a href="#plan" class="btn-primary">Ver Plan Base</a>
         </div>
     </header>
+
+    <section id="beneficios" class="beneficios">
+        <div class="container">
+            <div class="beneficios-grid">
+                <div class="beneficios-img">
+                    <img src="young-woman-typing-laptop-while-sitting-stairs-online-focus.jpg" alt="Conectividad KTeleconexiones">
+                </div>
+                <div class="beneficios-text">
+                    <h2 class="section-title" style="text-align: left; margin-bottom: 20px;">¿Por qué elegir KTeleconexiones?</h2>
+                    <p>Llevamos la mejor tecnología de transmisión de datos directamente a tu puerta, garantizando una experiencia de usuario superior.</p>
+                    
+                    <div class="benefit-item">
+                        <i class="fas fa-rocket"></i>
+                        <div>
+                            <h4>Velocidad Ultra Rápida</h4>
+                            <p>Navega sin esperas. Ideal para descargas pesadas y streaming en alta definición.</p>
+                        </div>
+                    </div>
+
+                    <div class="benefit-item">
+                        <i class="fas fa-shield-alt"></i>
+                        <div>
+                            <h4>Conexión 100% Estable</h4>
+                            <p>Olvídate de las caídas. Nuestra red de fibra óptica es inmune a interferencias climáticas.</p>
+                        </div>
+                    </div>
+
+                    <div class="benefit-item">
+                        <i class="fas fa-headset"></i>
+                        <div>
+                            <h4>Soporte Local en Guárico</h4>
+                            <p>Atención personalizada y técnica directamente en Las Mercedes del Llano.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <section id="plan" class="planes">
         <div class="container">
             <h2 class="section-title">Nuestro Plan de Conectividad</h2>
-            <div class="plan-grid" style="display: flex; justify-content: center;">
-                
-                <div class="plan-card featured" style="max-width: 450px;">
+            <div class="plan-grid">
+                <div class="plan-card featured">
                     <div class="badge">Más Solicitado</div>
                     <h3>Plan Base</h3>
                     <div class="price">Fibra Óptica de Alta Velocidad</div>
-                    <p style="color: var(--text-light); margin-bottom: 20px;">Diseñado para el hogar moderno y el emprendedor local.</p>
                     <ul>
                         <li><i class="fas fa-check"></i> Navegación Ilimitada 24/7</li>
                         <li><i class="fas fa-check"></i> Ideal para Streaming y Videollamadas</li>
                         <li><i class="fas fa-check"></i> Conexión Estable de Baja Latencia</li>
-                        <li><i class="fas fa-check"></i> Soporte Técnico y Atención al Cliente</li>
+                        <li><i class="fas fa-check"></i> Soporte Técnico en Las Mercedes</li>
                         <li><i class="fas fa-check"></i> Instalación Profesional</li>
                     </ul>
                     <button class="btn-plan" onclick="sendWhatsApp('Plan Base')">Consultar Disponibilidad</button>
                 </div>
-
             </div>
         </div>
     </section>
@@ -76,14 +105,14 @@
                 </div>
                 <div class="footer-links">
                     <h4>Enlaces Rápidos</h4>
-                    <ul style="list-style: none; padding: 0;">
-                        <li><a href="privacidad.html" style="color: white; opacity: 0.8; text-decoration: none;">Política de Privacidad</a></li>
-                        <li><a href="#inicio" style="color: white; opacity: 0.8; text-decoration: none;">Volver Arriba</a></li>
+                    <ul>
+                        <li><a href="privacidad.html">Política de Privacidad</a></li>
+                        <li><a href="#inicio">Volver Arriba</a></li>
                     </ul>
                 </div>
             </div>
             <div class="copyright">
-                <p>© 2026 KTELECONEXIONES C.A - Todos los derechos reservados. Registrada en Venezuela.</p>
+                <p>© 2026 KTELECONEXIONES C.A - Todos los derechos reservados.</p>
             </div>
         </div>
     </footer>
