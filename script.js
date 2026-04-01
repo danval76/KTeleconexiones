@@ -1,6 +1,6 @@
 // Función para enviar mensaje directo por WhatsApp según el plan
 function sendWhatsApp(planName) {
-    const phoneNumber = "584127912999";
+    const phoneNumber = "+584262573709";
     const message = `Hola KTeleconexiones, estoy interesado en contratar el ${planName}. ¿Podrían darme más información?`;
     const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
     
